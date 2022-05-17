@@ -1,9 +1,8 @@
 const path = require('path');
 const express = require('express');
-const routes = require('./controllers');
-const exphbs = require('express-handlebars');
 const session = require('express-session');
-const helpers = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers/');
 
 
 const app = express();
@@ -25,6 +24,8 @@ const sess = {
 
 
 app.use(session(sess));
+
+const helpers = require('./utils/helpers');
 
 const hbs = exphbs.create({ helpers });
 
